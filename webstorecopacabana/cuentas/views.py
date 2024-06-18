@@ -12,11 +12,11 @@ def register(request):
 
         if password == confirm_password:
             user = User.objects.create_superuser(username=username, email=email, password=password)
-            return render(request, 'accounts/register.html', {'success': True})
+            return render(request, 'cuentas/register.html', {'success': True})
         else:
-            return render(request, 'accounts/register.html', {'error': 'Las contraseñas no coinciden.'})
+            return render(request, 'cuentas/register.html', {'error': 'Las contraseñas no coinciden.'})
 
-    return render(request, 'accounts/register.html')
+    return render(request, 'cuentas/register.html')
 
 def login_view(request):
     if request.method == 'POST':
@@ -29,9 +29,9 @@ def login_view(request):
             login(request, user)
             return redirect('pag_main')
         else:
-            return render(request, 'accounts/login.html', {'error': 'Ingresó algún dato incorrecto.'})
+            return render(request, 'cuentas/login.html', {'error': 'Ingresó algún dato incorrecto.'})
 
-    return render(request, 'accounts/login.html')
+    return render(request, 'cuentas/login.html')
 
 def client_login(request):
     if request.method == 'POST':
@@ -41,7 +41,7 @@ def client_login(request):
         login(request, user)
         return redirect('pag_main')
 
-    return render(request, 'accounts/client_login.html')
+    return render(request, 'cuentas/client_login.html')
 
 def logout_view(request):
     logout(request)
