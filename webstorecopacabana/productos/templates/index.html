@@ -1,45 +1,52 @@
 {% load static %}
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
     <title>TIENDA COPACABANA</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <div class="page-header">
-        <div class="button-container">
-        {% if user.is_authenticated %}
-           <a href="{% url 'logout' %}" class="top-menu btn btn-warning">Cerrar Sesión</a>
-        {% else %}
-            <a href="{% url 'login' %}" class="top-menu btn btn-primary">Iniciar Sesión</a>
-            <a href="{% url 'register' %}" class="top-menu btn btn-success">Regístrate</a>
-        {% endif %}
-        </div>
-    </div>
     <header>
-        <div class="page-header">
-            <h1>Tienda Copacabana</h1>
+        <h1>Tienda Copacabana</h1>
+        <div class="button-container">
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="top-menu btn btn-warning">Cerrar Sesión</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="top-menu btn btn-primary">Iniciar Sesión</a>
+                <a href="{% url 'register' %}" class="top-menu btn btn-success">Regístrate</a>
+            {% endif %}
         </div>
     </header>
+
     <nav>
         <a href="{% url 'pag_main' %}">INICIO</a>
-        <a href="">PRODUCTOS</a>
+        <a href="#">PRODUCTOS</a>
     </nav>
 
-    <div class="productos">
+    <div class="content">
         <div class="row">
             <div class="col-md-8">
-            {% block content %}
-            {% endblock %}
+                {% block content %}
+                {% endblock %}
             </div>
         </div>
     </div>
+
+    <div class="ofertas-container">
+        <div class="oferta">
+            <img src="https://img.offers-cdn.net/assets/uploads/offers/pe/40474305/leche-uht-gloria-caja-x-1l-thumbWebP.webp" alt="Oferta Gloria" width="300">
+        </div>
+        <div class="oferta">
+            <img src="https://img.offers-cdn.net/assets/uploads/offers/pe/40474305/leche-uht-gloria-caja-x-1l-thumbWebP.webp" alt="Oferta Gloria" width="300">
+        </div>
+    </div>
+
     <footer>
         <p>Tienda Copacabana &copy; 2024. Todos los derechos reservados.</p>
     </footer>

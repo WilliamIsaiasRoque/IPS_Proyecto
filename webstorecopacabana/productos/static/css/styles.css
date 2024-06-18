@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #ffdc81;
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Brush Script MT', cursive;
+    color: black;
+    font-size: 48px;
+}
+
+nav {
+    position: fixed;
+    top: 100px; /* Ajusta esto según la altura de tu header */
+    width: 100%;
+    background-color: #ffdc81; /* Color de fondo del nav */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0; /* Espacio interior vertical */
+}
+
+nav a {
+    margin: 0 15px; /* Ajusta el espacio horizontal entre los enlaces */
+    color: white; /* Color de texto de los enlaces */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px; /* Ajusta el tamaño de la fuente si es necesario */
+}
+
+nav a:hover {
+    text-decoration: underline; /* Subraya el enlace al pasar el ratón sobre él */
+}
+
+.content {
+    padding: 20px;
+    flex-grow: 1;
+    margin-top: 110px; /* Ajusta esto según la altura combinada de tu header y nav */
+}
+
+footer {
+    background-color: #ffdc81;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: auto;
+    font-weight: bold;
+}
+
+
+.ofertas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.oferta {
+    margin: 0 10px; /* Ajusta el espacio entre las ofertas */
+    text-align: center;
+}
+
+.oferta img {
+    max-width: 100%;
+    height: auto;
+}
