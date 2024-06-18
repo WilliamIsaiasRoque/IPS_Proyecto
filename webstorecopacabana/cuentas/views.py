@@ -82,3 +82,6 @@ def client_login(request):
             return render(request, 'cuentas/client_login.html', {'error': 'Usuario no encontrado.'})
 
     return render(request, 'cuentas/client_login.html')
+
+
+    

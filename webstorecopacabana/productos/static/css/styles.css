@@ -42,7 +42,7 @@ nav {
 
 nav a {
     margin: 0 15px; /* Ajusta el espacio horizontal entre los enlaces */
-    color: white; /* Color de texto de los enlaces */
+    color: rgb(0, 0, 0); /* Color de texto de los enlaces */
     text-decoration: none;
     font-weight: bold;
     font-size: 18px; /* Ajusta el tamaño de la fuente si es necesario */
@@ -61,7 +61,7 @@ nav a:hover {
 footer {
     color:black;
     background-color: #ffdc81;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 10px;
     text-align: center;
     margin-top: auto;

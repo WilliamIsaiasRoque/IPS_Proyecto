@@ -15,10 +15,18 @@ body {
 
 header {
     background-color: #ffdc81;
-    color: #fff;
-    padding: 10px;
+    color: #000000;
+    padding: 5px;
     margin-top: -85;
     text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Brush Script MT', cursive;
+    color: black;
+    font-size: 48px;
+    margin-left: 40px;
 }
 
 /* Estilo para el contenedor principal */
@@ -62,8 +70,10 @@ a {
 /* Estilo para el footer */
 footer {
     background-color: #ffdc81;
-    color: #fff;
+    color: #000000;
     padding: 10px;
     text-align: center;
 }
+
+
 
