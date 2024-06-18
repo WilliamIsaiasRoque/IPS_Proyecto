@@ -59,33 +59,9 @@ a {
 }
 
 
-/* Estilo para el enlace "Accede aquí" */
-.blinking-text {
-    animation: blinker 1s linear infinite;
-}
-
-@keyframes blinker {
-    50% {
-        color: red;
-    }
-}
-
-/* Estilos para mensajes de error */
-.error-message {
-    font-weight: bold;
-    color: red;
-    padding: 33px;
-}
-
-.error-registration {
-    font-weight: bold;
-    color: red;
-    padding-top: 125px;
-}
-
 /* Estilo para el footer */
 footer {
-    background-color: #333;
+    background-color: #ffdc81;
     color: #fff;
     padding: 10px;
     text-align: center;
