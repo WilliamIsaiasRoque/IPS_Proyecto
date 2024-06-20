@@ -15,7 +15,9 @@
     <header>
         <h1>
             Tienda Copacabana
+            {% if block_name != 'productos_block' %}
             <img src="https://cdn-icons-png.flaticon.com/512/1345/1345040.png" alt="Icono Tienda" class="store-icon">
+            {% endif %}
         </h1>
         <div class="button-container">
             {% if user.is_authenticated %}
@@ -29,7 +31,7 @@
 
     <nav>
         <a href="{% url 'pag_main' %}">INICIO</a>
-        <a href="#" class="productos-link">PRODUCTOS</a>
+        <a href="{% url 'prod_list' %}">PRODUCTOS</a>
     </nav>
 
     <div class="content">
@@ -53,7 +55,5 @@
     <footer>
         <p>Tienda Copacabana &copy; 2024. Todos los derechos reservados.</p>
     </footer>
-
-    <script src="{% static 'js/scripts.js' %}"></script>
 </body>
 </html>
