@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Abarrotes Virgen de Copacabana</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <strong>Tienda de abarrotes</strong><br>
+            Virgen de Copacabana
+        </div>
+        <nav>
+            <a href="#">Ver productos</a>
+            <a href="#">Contactenos</a>
+            <a href="#" class="whatsapp">
+                <img src="{% static 'images/whatsapp.svg' %}" alt="WhatsApp">
+            </a>
+        </nav>
+        <!-- Mostrar el botón de cierre de sesión si el usuario está autenticado -->
+        {% if request.session.is_logged_in %}
+            <a href="{% url 'logout' %}" class="logout-button">Cerrar sesión</a>
+        {% else %}
+            <a href="{% url 'login' %}">Iniciar sesión</a>
+            <a href="#">Regístrate</a>
+        {% endif %}
+    </header>
+    <div class="main-content">
+        <nav>
+            <a href="#">Acerca de nosotros</a>
+        </nav>
+        <div class="offer">
+            <p>Oferta disponible</p>
+            <img src="{% static 'images/yogurt-gloria.png' %}" alt="Yogures Gloria">
+            <h2>20 % de descuento en yogures Gloria</h2>
+        </div>
+    </div>
+    <footer class="footer">
+        <!-- Eliminar la sección de métodos de pago -->
+    </footer>
+</body>
+</html>

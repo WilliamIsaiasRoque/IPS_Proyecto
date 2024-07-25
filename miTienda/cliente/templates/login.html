@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virgen de Copacabana - Inicio de Sesión</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            Virgen de Copacabana
+        </div>
+        <nav>
+            <a href="#">Ver productos</a>
+            <a href="#">Contactenos</a>
+            <a href="#" class="whatsapp">
+                <img src="{% static 'images/whatsapp.svg' %}" alt="WhatsApp">
+            </a>
+        </nav>
+    </header>
+    <div class="login-container">
+        <h2>Entrar con e-mail y contraseña</h2>
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <input name="username" placeholder="Ej.: User..." required>
+            <input type="password" name="password" placeholder="Ingrese su contraseña" required>
+            <button type="submit">Entrar</button>
+            <a href="#">Olvidé mi contraseña</a>
+            <a href="#">¿No tiene una cuenta? Regístrese</a>
+        </form>
+    </div>
+</body>
+</html>
