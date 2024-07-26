@@ -24,7 +24,7 @@
                 <a href="{% url 'logout' %}" class="logout-button">Cerrar sesión</a>
             {% else %}
                 <a href="{% url 'login' %}" class="top-menu btn btn-primary">Iniciar sesión</a>
-                <a href="#" class="top-menu btn btn-primary">Regístrate</a>
+                <a href="{% url 'register' %}" class="top-menu btn btn-primary">Regístrate</a>
             {% endif %}
         </div>
     </header>
