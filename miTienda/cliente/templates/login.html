@@ -1,35 +1,42 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virgen de Copacabana - Inicio de Sesión</title>
-    {% load static %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <title>Iniciar Sesión</title>
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            Virgen de Copacabana
-        </div>
-        <nav>
-            <a href="#">Ver productos</a>
-            <a href="#">Contactenos</a>
-            <a href="#" class="whatsapp">
-                <img src="{% static 'images/whatsapp.svg' %}" alt="WhatsApp">
-            </a>
-        </nav>
+    <header>
+        <h1>
+            Tienda Copacabana
+        </h1>
     </header>
-    <div class="login-container">
-        <h2>Entrar con e-mail y contraseña</h2>
-        <form method="post" action="{% url 'login' %}">
+    <div class="container">
+        <h2>Iniciar Sesión</h2>
+        <form method="post">
             {% csrf_token %}
-            <input name="username" placeholder="Ej.: User..." required>
-            <input type="password" name="password" placeholder="Ingrese su contraseña" required>
-            <button type="submit">Entrar</button>
-            <a href="#">Olvidé mi contraseña</a>
-            <a href="#">¿No tiene una cuenta? Regístrese</a>
+            <div class="form-field">
+                <label for="username">Nombre de usuario:</label>
+                <input type="text" name="username" required><br>
+            </div>
+            <div class="form-field">    
+                <label for="password">Contraseña:</label>
+                <input type="password" name="password" required><br>
+            </div>
+            {% if error %}
+                <div class="error-message">{{ error }}</div>
+            {% endif %}
+            <div>    
+                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            </div>
         </form>
+        <a href="{% url 'index' %}" class="btn btn-primary">Volver al inicio</a>
+        <p>¿No tienes cuenta? <a href="{% url 'register' %}" class="blinking-text">Regístrate aquí</a>!</p>
     </div>
+    <footer>
+        <p>Tienda Virtual &copy; 2024. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

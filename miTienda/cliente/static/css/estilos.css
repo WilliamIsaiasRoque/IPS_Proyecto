@@ -1,122 +1,102 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
     margin: 0;
     padding: 0;
-    background-color: #aef4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.header {
-    width: 100%;
-    background-color: #f7d47c;
-    padding: 10px;
+header {
+    background-color: #ffdc81;
+    padding: 20px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
-.header .logo {
-    font-size: 24px;
-    color: #00a8ff;
+header h1 {
+    margin: 0;
+    font-family: 'Brush Script MT', cursive;
+    color: black;
+    font-size: 48px;
+    margin-left: 40px;
+}
+
+nav {
+    position: fixed;
+    top: 100px; /* Ajusta esto según la altura de tu header */
+    width: 100%;
+    background-color: #ffdc81; /* Color de fondo del nav */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0; /* Espacio interior vertical */
+}
+
+nav a {
+    margin: 0 15px; /* Ajusta el espacio horizontal entre los enlaces */
+    color: rgb(0, 0, 0); /* Color de texto de los enlaces */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px; /* Ajusta el tamaño de la fuente si es necesario */
+}
+
+nav a:hover {
+    text-decoration: underline; /* Subraya el enlace al pasar el ratón sobre él */
+}
+
+.content {
+    padding: 20px;
+    flex-grow: 1;
+    margin-top: 110px; /* Ajusta esto según la altura combinada de tu header y nav */
+}
+
+footer {
+    color:black;
+    background-color: #ffdc81;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    text-align: center;
+    margin-top: auto;
     font-weight: bold;
 }
 
-.header nav {
+
+.ofertas-container {
     display: flex;
-    gap: 20px;
-}
-
-.header nav a {
-    text-decoration: none;
-    color: black;
-    font-size: 14px;
-}
-
-.header .whatsapp {
-    width: 30px;
-    height: 30px;
-}
-
-.main-content {
-    padding: 20px;
-    text-align: center;
-    margin-top: 60px; /* Ajustar según el tamaño del header */
-}
-
-.offer {
-    background-color: #fff700;
-    padding: 20px;
-    display: inline-block;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
 }
 
-.offer img {
+.oferta {
+    margin: 0 10px; /* Ajusta el espacio entre las ofertas */
+    text-align: center;
+}
+
+.oferta img {
     max-width: 100%;
     height: auto;
 }
 
-.offer h2 {
-    color: red;
-    font-size: 24px;
+
+/*icono*/
+.store-icon {
+    width: 40px; /* Tamaño del icono ajustado */
+    margin-left: 10px; /* Espacio entre el título y el icono */
 }
 
-.footer {
-    padding: 10px;
-    text-align: center;
-    background-color: #f7d47c;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-.payment-methods img {
-    width: 50px;
-    margin: 0 10px;
-}
-
-.login-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
-    margin-top: 100px;
-    width: 300px;
-}
-
-.login-container input[type="email"], 
-.login-container input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.login-container button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.login-container button:hover {
-    background-color: #45a049;
-}
-
-.login-container a {
-    color: #00a8ff;
-    text-decoration: none;
-    display: block;
-    margin-top: 10px;
-}
-
-.login-container a:hover {
-    text-decoration: underline;
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
 }
 
 .logout-button {
@@ -128,6 +108,38 @@ body {
     display: inline-block;
 }
 
-.logout-button:hover {
-    background-color: #d32f2f;
+.container {
+    max-width: 550px;
+    text-align: center;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Agrega fondo blanco con opacidad para el contenido */
+    border-radius: 60px;
+    padding: 100px;
+
+}
+
+/* Estilo para los campos de formulario (input y label) */
+.form-field {
+    margin-bottom: 10px; 
+    border-radius: 1px;
+    text-align: right;
+    float: right;
+    clear: both;
+}
+
+h2 {
+    margin-bottom: 20px; /* Espacio entre el título y los campos */
+    font-size: 20px
+}
+
+
+/* Estilo para los botones */
+button {
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
 }

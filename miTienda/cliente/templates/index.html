@@ -1,45 +1,59 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <title>TIENDA COPACABANA</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Abarrotes Virgen de Copacabana</title>
-    {% load static %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            <strong>Tienda de abarrotes</strong><br>
-            Virgen de Copacabana
+    <header>
+        <h1>
+            Tienda Copacabana
+            {% if block_name != 'productos_block' %}
+            <img src="https://cdn-icons-png.flaticon.com/512/1345/1345040.png" alt="Icono Tienda" class="store-icon">
+            {% endif %}
+        </h1>
+        <div class="button-container">
+            {% if request.session.is_logged_in %}
+                <a href="{% url 'logout' %}" class="logout-button">Cerrar sesión</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="top-menu btn btn-primary">Iniciar sesión</a>
+                <a href="#" class="top-menu btn btn-primary">Regístrate</a>
+            {% endif %}
         </div>
-        <nav>
-            <a href="#">Ver productos</a>
-            <a href="#">Contactenos</a>
-            <a href="#" class="whatsapp">
-                <img src="{% static 'images/whatsapp.svg' %}" alt="WhatsApp">
-            </a>
-        </nav>
-        <!-- Mostrar el botón de cierre de sesión si el usuario está autenticado -->
-        {% if request.session.is_logged_in %}
-            <a href="{% url 'logout' %}" class="logout-button">Cerrar sesión</a>
-        {% else %}
-            <a href="{% url 'login' %}">Iniciar sesión</a>
-            <a href="#">Regístrate</a>
-        {% endif %}
     </header>
-    <div class="main-content">
-        <nav>
-            <a href="#">Acerca de nosotros</a>
-        </nav>
-        <div class="offer">
-            <p>Oferta disponible</p>
-            <img src="{% static 'images/yogurt-gloria.png' %}" alt="Yogures Gloria">
-            <h2>20 % de descuento en yogures Gloria</h2>
+
+    <nav>
+        <a href="{% url 'index' %}">INICIO</a>
+        <a href="{% url 'prod_list' %}">PRODUCTOS</a>
+    </nav>
+
+    <div class="content">
+        <div class="row">
+            <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+            </div>
         </div>
     </div>
-    <footer class="footer">
-        <!-- Eliminar la sección de métodos de pago -->
+
+    <div class="ofertas-container">
+        <div class="oferta">
+            <img src="https://lachacraorganica.com.pe/wp-content/uploads/2021/12/2-4-600x600.png" alt="Oferta Gloria" width="400">
+        </div>
+        <div class="oferta">
+            <img src="https://img.offers-cdn.net/assets/uploads/offers/pe/40474305/leche-uht-gloria-caja-x-1l-thumbWebP.webp" alt="Oferta Gloria" width="700">
+        </div>
+    </div>
+
+    <footer>
+        <p>Tienda Copacabana &copy; 2024. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
